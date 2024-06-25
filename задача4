@@ -1,0 +1,20 @@
+средняя стоим. с двумя спальнями
+avg_price_2_bedrooms = data[data['bedrooms'] == 2]['price'].mean()
+print(avg_price_2_bedrooms)
+
+средняя общая площадь домов стоимостью более 600,000
+avg_area_expensive_houses = data[data['price'] > 600000]['sqft_lot'].mean()
+print(avg_area_expensive_houses)
+
+дома с ремонтов
+renovated_houses_count = data[data['yr_renovated'] > 0].shape[0]
+print(renovated_houses_count)
+914
+
+разница домов по средней стоимости по оценке grade /разные оценки grade/
+avg_price_high_grade = data[data['grade'] > 10]['price'].mean()
+avg_price_low_grade = data[data['grade'] < 4]['price'].mean()
+price_diff = avg_price_high_grade - avg_price_low_grade
+print(price_diff)
+
+
